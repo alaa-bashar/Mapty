@@ -1,0 +1,305 @@
+.hidden {
+  display: none !important;
+}
+
+.close-icon {
+  color: #ececec;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-icon:hover {
+  color: red;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Manrope", "Arial";
+}
+
+.main-wrapper {
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  margin: 30px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 5px 5px 20px #aaa;
+  overflow: hidden;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #2d3439;
+  max-width: 400px;
+  height: calc(100% - 70px);
+  padding: 30px 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sidebar img {
+  width: 130px;
+  margin-bottom: 40px;
+  align-self: center;
+}
+.sidebar .workouts {
+  height: 550px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  padding: 0;
+  color: #ececec;
+}
+.sidebar .workouts .workout {
+  background-color: #42484d;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px 20px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+.sidebar .workouts .workout .workout-title {
+  font-size: 18px;
+  margin: 0;
+  grid-column: 1/-1;
+}
+.sidebar .workouts .workout .workout-details {
+  display: flex;
+  align-items: baseline;
+}
+.sidebar .workouts .workout .workout-details .workout-value {
+  margin-right: 5px;
+}
+.sidebar .workouts .workout .workout-details .workout-unit {
+  color: #aaa;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.sidebar .workouts .workout-running {
+  border-left: 5px solid #00c46a;
+}
+.sidebar .workouts .workout-cycling {
+  border-left: 5px solid #ffb545;
+}
+.sidebar .workouts::-webkit-scrollbar {
+  display: none;
+}
+.sidebar .remove-all {
+  display: block;
+  padding: 10px;
+  margin: 10px 0 20px;
+  background-color: #00c46a;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.sidebar .remove-all:hover {
+  background-color: red;
+}
+.sidebar .remove-all:disabled {
+  background-color: #aaa;
+}
+.sidebar .copyright {
+  color: #aaa;
+  font-size: 13px;
+  margin: 0;
+  text-align: center;
+}
+.sidebar .social-link {
+  color: inherit;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.sidebar .social-link:hover {
+  color: #ececec;
+}
+
+#map {
+  flex: 1;
+  height: 100%;
+  background-color: #aaa;
+  position: relative;
+  z-index: 1;
+}
+#map .leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: #2d3439;
+  color: #ececec;
+  padding-right: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+#map .leaflet-popup .leaflet-popup-content {
+  font-size: 13px;
+}
+#map .leaflet-popup .leaflet-popup-tip {
+  background-color: #2d3439;
+}
+#map .running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #00c46a;
+}
+#map .cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #ffb545;
+}
+#map .form {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #2d3439;
+  font-family: "Manrope", "Arial";
+  padding: 40px 20px 20px;
+  z-index: 1001;
+  color: #ececec;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 20px #aaa;
+}
+#map .form input,
+#map .form select,
+#map .form button {
+  border: none;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+#map .form .save-btn {
+  background-color: #00c46a;
+  display: block;
+  padding: 10px 20px;
+  margin: 20px auto 0px;
+  align-self: center;
+  border: none;
+  color: #2d3439;
+  font-weight: bold;
+  cursor: pointer;
+}
+#map .form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+#map .form .form-grid .form-elem > * {
+  width: 80px;
+}
+#map .form .form-grid .form-elem label {
+  display: inline-block;
+  font-size: 14px;
+}
+#map .form .form-grid .form-elem select {
+  width: 100px;
+}
+#map .form .form-grid .form-elem input,
+#map .form .form-grid .form-elem select {
+  background-color: rgb(214, 222, 224);
+  padding: 5px 10px;
+}
+#map .form .form-grid .form-elem input:focus,
+#map .form .form-grid .form-elem select:focus {
+  outline: none;
+  background-color: #ececec;
+}
+#map .overlay {
+  background-color: #2d3439;
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: absolute;
+}
+
+@media screen and (max-width: 992px) {
+  .main-wrapper {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    margin: 10px;
+    flex-direction: column-reverse;
+  }
+  .sidebar {
+    max-width: 100%;
+    height: 40%;
+    padding: 10px 15px 10px;
+  }
+  .sidebar img {
+    width: 100px;
+    margin: 5px 0px 0px;
+  }
+  .sidebar .workouts .workout {
+    padding: 10px 5px 10px;
+    gap: 10px 5px;
+  }
+  .sidebar .workouts .workout .workout-title {
+    font-size: 16px;
+  }
+  .sidebar .copyright {
+    display: none;
+  }
+  #map .form-grid {
+    display: flex !important;
+    flex-direction: column;
+  }
+  #map .form-grid .form-elem {
+    width: 100%;
+  }
+}/*# sourceMappingURL=styles.css.map */

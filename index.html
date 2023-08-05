@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <title>mapty | Map your workouts</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="sidebar">
+        <img src="./assets/logo.png" alt="" />
+        <ul class="workouts"></ul>
+        <button class="remove-all">
+          <i class="fa-solid fa-trash-can"></i> Remove All
+        </button>
+        <p class="copyright">
+          Implemented for educational purposes by
+          <a
+            class="social-link"
+            target="_blank"
+            href="https://www.linkedin.com/in/alaa-bashar-9526451a4/"
+            >Alaa Bashar </a
+          >. <br />
+          © Copyright by
+          <a
+            class="social-link"
+            target="_blank"
+            href="https://twitter.com/jonasschmedtman"
+            >Jonas Schmedtmann</a
+          >.
+        </p>
+      </div>
+      <div id="map">
+        <div class="overlay hidden"></div>
+        <form class="form hidden" action="">
+          <i class="fa-solid fa-xmark close-icon close-form"></i>
+          <div class="form-grid">
+            <div class="form-elem">
+              <label for="type">Type</label>
+              <select class="form-input-type" name="type" id="type">
+                <option value="running">Running</option>
+                <option value="cycling">Cycling</option>
+              </select>
+            </div>
+            <div class="form-elem">
+              <label for="distance">Distance</label>
+              <input
+                class="form-input-distance"
+                type="number"
+                name="distance"
+                value=""
+                id="distance"
+                placeholder="km"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-elem">
+              <label for="duration">Duration</label>
+              <input
+                class="form-input-duration"
+                type="number"
+                name="duration"
+                value=""
+                id="duration"
+                placeholder="min"
+                min="0"
+                required
+              />
+            </div>
+            <div class="form-elem">
+              <label for="cadence">Cadence</label>
+              <input
+                class="form-input-cadence"
+                type="number"
+                name="cadence"
+                value=""
+                id="cadence"
+                placeholder="step/min"
+                min="0"
+              />
+            </div>
+            <div class="form-elem hidden">
+              <label for="elevation">Elev Gain</label>
+              <input
+                class="form-input-elevation"
+                type="number"
+                name="elevation"
+                value=""
+                id="elevation"
+                placeholder="meters"
+              />
+            </div>
+          </div>
+          <!-- <button class="save-btn">Save</button> -->
+          <input class="save-btn" type="submit" value="Save" />
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/4c4ceebb82.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
